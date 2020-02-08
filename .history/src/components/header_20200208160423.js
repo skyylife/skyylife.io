@@ -10,28 +10,31 @@ const Header = styled("div")`
   marginbottom: 1.45rem;
 `
 
+const titleStyles = css`
+  color: black;
+  textdecoration: ;
+`
+
 const linkStyles = css`
   color: white;
 `
 
-const headerStyles = css`
-  margin: auto;
-  width: 100%;
-  padding: 1em;
-`
-
-const h1Style = css`
-  margin: auto;
-`
-
 export default ({ siteTitle }) => (
   <Header>
-    <header css={headerStyles}>
-      <h1 css={h1Style}>
-        <Link to="/" css={linkStyles}>
-          {siteTitle}
-        </Link>
-      </h1>
+    <header>
+      <div
+        style={{
+          margin: `auto`,
+          maxWidth: `100%`,
+          padding: `1rem`,
+        }}
+      >
+        <h1 style={{ margin: 0 }}>
+          <Link to="/" css={linkStyles}>
+            {siteTitle}
+          </Link>
+        </h1>
+      </div>
     </header>
   </Header>
 )

@@ -20,14 +20,10 @@ const headerStyles = css`
   padding: 1em;
 `
 
-const h1Style = css`
-  margin: auto;
-`
-
 export default ({ siteTitle }) => (
   <Header>
     <header css={headerStyles}>
-      <h1 css={h1Style}>
+      <h1 style={{ margin: 0 }}>
         <Link to="/" css={linkStyles}>
           {siteTitle}
         </Link>

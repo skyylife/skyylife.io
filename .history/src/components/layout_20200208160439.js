@@ -4,7 +4,7 @@ import styled from "@emotion/styled"
 import Header from "../components/header"
 
 const Wrapper = styled("div")`
-  border: 2px solid grey;
+  border: 2px solid gret;
   padding: 1rem;
 `
 
