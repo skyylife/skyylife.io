@@ -12,7 +12,7 @@ const Header = styled("div")`
 
 const titleStyles = css`
   color: black;
-  textdecoration: ;
+  textdecoration: strong;
 `
 
 export default ({ siteTitle }) => (
@@ -20,19 +20,13 @@ export default ({ siteTitle }) => (
     <header>
       <div
         style={{
-          margin: `auto`,
-          maxWidth: `100%`,
-          padding: `1rem`,
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `1.45rem 1.0875rem`,
         }}
       >
         <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
+          <Link to="/" css={titleStyles}>
             {siteTitle}
           </Link>
         </h1>

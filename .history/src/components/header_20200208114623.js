@@ -10,19 +10,20 @@ const Header = styled("div")`
   marginbottom: 1.45rem;
 `
 
-const titleStyles = css`
-  color: black;
-  textdecoration: ;
-`
-
 export default ({ siteTitle }) => (
   <Header>
-    <header>
+    <header
+      style={css`
+        background: grey;
+        color: grey;
+        marginbottom: 1.45rem;
+      `}
+    >
       <div
         style={{
-          margin: `auto`,
-          maxWidth: `100%`,
-          padding: `1rem`,
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `1.45rem 1.0875rem`,
         }}
       >
         <h1 style={{ margin: 0 }}>
@@ -48,3 +49,5 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
+
+export default Header

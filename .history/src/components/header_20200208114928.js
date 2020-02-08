@@ -21,7 +21,7 @@ export default ({ siteTitle }) => (
       <div
         style={{
           margin: `auto`,
-          maxWidth: `100%`,
+          maxWidth: 960,
           padding: `1rem`,
         }}
       >

@@ -20,8 +20,8 @@ export default ({ siteTitle }) => (
     <header>
       <div
         style={{
-          margin: `auto`,
-          maxWidth: `100%`,
+          margin: `0 auto`,
+          maxWidth: 960,
           padding: `1rem`,
         }}
       >
