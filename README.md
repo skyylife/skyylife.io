@@ -1,10 +1,4 @@
-## This site was bootstrapped with gatsby JS info is below
-
-## Package Manager
-
-We are using Yarn to manage packages
-
-## Gatsby Info
+## This site was bootstrapped with gatsby JS
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
@@ -47,6 +41,10 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
     Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+
+## Package Manager
+
+We are using Yarn to manage packages
 
 ## 🧐 What's inside?
 
