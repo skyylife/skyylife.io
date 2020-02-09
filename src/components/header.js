@@ -3,11 +3,12 @@ import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import React from "react"
+import ShortLogo from "./short-logo"
 
 const Header = styled("div")`
-  background: #4288ae;
-  color: #4288ae;
-  marginbottom: 1.45rem;
+  background: #333333;
+  color: #333333;
+  marginbottom: 1rem;
 `
 
 const linkStyles = css`
@@ -15,7 +16,7 @@ const linkStyles = css`
   text-decoration: none;
 
   &:hover {
-    color: #ff0000;
+    color: #4288ae;
   }
 `
 
@@ -33,25 +34,32 @@ const h1Style = css`
   justify-content: space-around;
 `
 
+const imageStyles = css`
+  height: auto;
+  width: auto;
+`
+
 export default ({ siteTitle }) => (
-  <Header>
-    <header css={headerStyles}>
-      <h1 css={h1Style}>
-        <Link to="/" css={linkStyles}>
-          Home
-        </Link>
-        <Link to="/" css={linkStyles}>
-          About
-        </Link>
-        <Link to="/" css={linkStyles}>
-          Projects
-        </Link>
-        <Link to="/" css={linkStyles}>
-          Contact
-        </Link>
-      </h1>
-    </header>
-  </Header>
+  <div>
+    <Header>
+      <header css={headerStyles}>
+        <h1 css={h1Style}>
+          <Link to="/" css={linkStyles}>
+            Home
+          </Link>
+          <Link to="/" css={linkStyles}>
+            About
+          </Link>
+          <Link to="/" css={linkStyles}>
+            Projects
+          </Link>
+          <Link to="/" css={linkStyles}>
+            Contact
+          </Link>
+        </h1>
+      </header>
+    </Header>
+  </div>
 )
 
 Header.propTypes = {

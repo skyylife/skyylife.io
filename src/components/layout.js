@@ -7,6 +7,7 @@ import Image from "../components/image"
 const Wrapper = styled("div")`
   border: 2px solid grey;
   padding: 1rem;
+  backgound: grey;
 `
 
 export default ({ children }) => (
@@ -16,7 +17,7 @@ export default ({ children }) => (
     <Global
       styles={css`
         div {
-          backgound: grey;
+          background: #333333;
           color: grey;
         }
       `}
