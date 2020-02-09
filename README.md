@@ -1,3 +1,11 @@
+## This site was bootstrapped with gatsby JS info is below
+
+## Package Manager
+
+We are using Yarn to manage packages
+
+## Gatsby Info
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
