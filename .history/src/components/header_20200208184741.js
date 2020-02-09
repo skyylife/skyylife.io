@@ -4,33 +4,27 @@ import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import React from "react"
 
+import Image from "../components/image"
+
 const Header = styled("div")`
-  background: #4288ae;
-  color: #4288ae;
+  background: grey;
+  color: grey;
   marginbottom: 1.45rem;
 `
 
 const linkStyles = css`
   color: white;
-  text-decoration: none;
-
-  &:hover {
-    color: #ff0000;
-  }
+  textdecorater: none;
 `
 
 const headerStyles = css`
-  smargin: auto;
+  margin: auto;
   width: 100%;
   padding: 1em;
-  text-shadow: 2px 2px #000000;
 `
 
 const h1Style = css`
   margin: auto;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-around;
 `
 
 export default ({ siteTitle }) => (
@@ -39,15 +33,6 @@ export default ({ siteTitle }) => (
       <h1 css={h1Style}>
         <Link to="/" css={linkStyles}>
           Home
-        </Link>
-        <Link to="/" css={linkStyles}>
-          About
-        </Link>
-        <Link to="/" css={linkStyles}>
-          Projects
-        </Link>
-        <Link to="/" css={linkStyles}>
-          Contact
         </Link>
       </h1>
     </header>

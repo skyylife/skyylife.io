@@ -4,6 +4,8 @@ import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import React from "react"
 
+import Image from "../components/image"
+
 const Header = styled("div")`
   background: #4288ae;
   color: #4288ae;
