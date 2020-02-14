@@ -1,6 +1,9 @@
-import React from "react"
+import React, { Fragment } from "react"
+import { jsx, css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Tilt from "react-parallax-tilt"
+import Background from "../components/background"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -12,6 +15,11 @@ import Img from "gatsby-image"
  * - `gatsby-image`: https://gatsby.dev/gatsby-image
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
+
+const imageStyles = css`
+  color: transparent;
+  scale: 0.5;
+`
 
 const Image = () => {
   const data = useStaticQuery(graphql`
@@ -26,7 +34,17 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <Fragment>
+      <Tilt>
+        <Img
+          css={imageStyles}
+          fluid={data.placeholderImage.childImageSharp.fluid}
+        />
+      </Tilt>
+      \
+    </Fragment>
+  )
 }
 
 export default Image

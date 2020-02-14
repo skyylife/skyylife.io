@@ -2,7 +2,6 @@ import React from "react"
 import { Global, css } from "@emotion/core"
 import styled from "@emotion/styled"
 import Header from "../components/header"
-import Image from "../components/image"
 
 const Wrapper = styled("div")`
   border: 2px solid grey;
@@ -12,16 +11,15 @@ const Wrapper = styled("div")`
 
 export default ({ children }) => (
   <Wrapper>
-    <Image />
     <Header siteTitle={"SkyyLife"} />
-    <Global
+    {/* <Global
       styles={css`
         div {
           background: #333333;
           color: grey;
         }
       `}
-    />
+    /> */}
     {children}
   </Wrapper>
 )
