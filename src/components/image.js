@@ -36,6 +36,7 @@ const Image = () => {
 
   return (
     <Fragment>
+      <Background />
       <Tilt>
         <Img
           css={imageStyles}

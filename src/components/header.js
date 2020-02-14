@@ -39,7 +39,6 @@ const h1Style = css`
 export default ({ siteTitle }) => (
   <div>
     <Header>
-      <Background />
       <Image />
 
       <header css={headerStyles}>
