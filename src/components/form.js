@@ -1,4 +1,16 @@
+import { jsx, css } from "@emotion/core"
 import React, { useState } from "react"
+
+const wrapperStyles = css`
+  flex-direction: column;
+  align-items: center;
+`
+
+const formStyles = css`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+`
 
 const ContactForm = ({ props }) => {
   const [status, setStatus] = useState("")
@@ -22,20 +34,23 @@ const ContactForm = ({ props }) => {
   }
 
   return (
-    <form
-      onSubmit={submitForm}
-      action="https://formspree.io/xnqvqbvl"
-      method="POST"
-    >
-      <label>Email:</label>
-      <input type="email" name="email" />
-      <label>Message:</label>
-      <input type="text" name="message" />
-      <label>Number</label>
-      <input type="text" name="number" />
-      {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
-      {status === "ERROR" && <p>Ooops! There was an error.</p>}
-    </form>
+    <div css={wrapperStyles}>
+      <form
+        onSubmit={submitForm}
+        action="https://formspree.io/xnqvqbvl"
+        method="POST"
+        css={formStyles}
+      >
+        <label>Email:</label>
+        <input type="email" name="email" />
+        <label>Message:</label>
+        <input type="text" name="message" />
+        <label>Number</label>
+        <input type="text" name="number" />
+        {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
+        {status === "ERROR" && <p>Ooops! There was an error.</p>}
+      </form>
+    </div>
   )
 }
 
