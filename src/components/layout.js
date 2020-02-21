@@ -12,9 +12,6 @@ const Wrapper = styled("div")`
 
 export default ({ children }) => (
   <Wrapper>
-    <Header siteTitle={"SkyyLife"} />
-    <ContactForm />
-
     {/* <Global
       styles={css`
         div {

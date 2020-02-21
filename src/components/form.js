@@ -44,7 +44,7 @@ const ContactForm = ({ props }) => {
         <label>Email:</label>
         <input type="email" name="email" />
         <label>Message:</label>
-        <input type="text" name="message" />
+        <textarea name="message"></textarea>
         <label>Number</label>
         <input type="text" name="number" />
         {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
