@@ -12,14 +12,14 @@ const Wrapper = styled("div")`
 
 export default ({ children }) => (
   <Wrapper>
-    {/* <Global
+    <Global
       styles={css`
         div {
-          background: #333333;
-          color: grey;
+          background: transparent;
+          color: transparent;
         }
       `}
-    /> */}
+    />
     {children}
   </Wrapper>
 )

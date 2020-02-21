@@ -2,14 +2,28 @@ import { jsx, css } from "@emotion/core"
 import React, { useState } from "react"
 
 const wrapperStyles = css`
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
+  height: calc(100% - 120px);
+  background-color: #333333;
 `
 
 const formStyles = css`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  color: white;
+  padding: 1em;
+`
+
+const textareaStyles = css`
+  width: 500px;
+  height: 100px;
 `
 
 const ContactForm = ({ props }) => {
@@ -44,9 +58,9 @@ const ContactForm = ({ props }) => {
         <label>Email:</label>
         <input type="email" name="email" />
         <label>Message:</label>
-        <textarea name="message"></textarea>
+        <textarea name="message" css={textareaStyles}></textarea>
         <label>Number</label>
-        <input type="text" name="number" />
+        <input type="text" name="number" style={{ marginBottom: "1em" }} />
         {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
         {status === "ERROR" && <p>Ooops! There was an error.</p>}
       </form>
