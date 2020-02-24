@@ -1,7 +1,7 @@
-import React from 'react'
-import { Global, css } from "@emotion/core"
+import React from "react"
+import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
-import { Card } from 'react-bootstrap'
+import { Card } from "react-bootstrap"
 
 const Container = styled.div`
   margin: 0;
@@ -10,103 +10,80 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  width: 100%
+  width: 100%;
 `
 
-const CardWrapper = styled.div`
+const CardStyles = css`
   display: flex;
+  border: 2px solid red;
   flex-direction: row;
   margin: 0;
+  padding: 0.5em;
   width: auto;
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .card-body {
+    justify-content: flex-start;
+  }
 `
 
-const CardWrapperRight = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 0;
-  width: auto;
+const headerStyles = css`
+  font-size: 200%;
 `
+const userData = [
+  {
+    id: 0,
+    name: "James Jarrett",
+    avatar: "",
+    excerpt: "This is James, the CEO",
+  },
+  {
+    id: 1,
+    name: "Aaron Shepherd",
+    avatar: "",
+    excerpt: "This is Aaron, the CTO",
+  },
 
-const ProPic = styled.img`
-  width: 96px;
-  height: 96px;
-  margin: 0;
-`
+  {
+    id: 2,
+    name: "Dymon Johnson",
+    avatar: "",
+    excerpt: "This is Dymon, the CDO",
+  },
+  {
+    id: 3,
+    name: "Quincey Thomas",
+    avatar: "",
+    excerpt: "This is Quincey, the CPO",
+  },
 
-const Description = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 80%
-  margin-left: 18px;
-  padding: 12px;
-`
-
-const Name = styled.h2`
-  display: flex;
-  align-self: center;
-  margin: 0;
-  padding: 0;
-`
-
-const Excerpt = styled.p`
-  display: flex;
-  margin: 0;
-`
-
-const User = props => (
-	<CardWrapper>
-		<ProPic src={props.avatar} alt='' />
-		<Description>
-			<Name>{props.name}</Name>
-			<Excerpt>{props.excerpt}</Excerpt>
-		</Description>
-	</CardWrapper>
-)
-
-const UserRight = props => (
-	<CardWrapperRight>
-		<ProPic src={props.avatar} alt='' />
-		<Description>
-			<Name>{props.name}</Name>
-			<Excerpt>{props.excerpt}</Excerpt>
-		</Description>
-	</CardWrapperRight>
-)
+  {
+    id: 4,
+    name: "Sharrone Berry-Davis",
+    avatar: "",
+    excerpt: "This is Sharrone, the CFO",
+  },
+]
 
 const About = () => {
-		return (
-			<Container>
-				<h2 style={{ fontSize: '280%' }}>Mission Statement:</h2>
-				<p>Our Mission is ...</p>
-				<h2 style={{ fontSize: '280%' }}>The High Council</h2>
-				<User 
-					name='James Jarrett'
-					avatar=''
-					excerpt='This is James, the CEO'
-				/>
-				<UserRight 
-					name='Sharrone Berry-Davis'
-					avatar=''
-					excerpt='This is Sharrone, the CFO'
-				/>
-				<User 
-					name='Aaron Shepherd'
-					avatar=''
-					excerpt='This is Aaron, the CTO'
-				/>
-				<UserRight 
-					name='Dymon Johnson'
-					avatar=''
-					excerpt='This is Dymon, the CDO'
-				/>
-				<User 
-					name='Quincey Thomas'
-					avatar=''
-					excerpt='This is Quincey, the CPO'
-				/>
-			</Container>
-		)
-}
+  return (
+    <Container>
+      <header css={headerStyles}>Mission Statement</header>
+      <p>Our Mission is ...</p>
+      <header css={headerStyles}>The High Council</header>
 
+      {userData.map(u => (
+        <Card key={u.id} css={CardStyles}>
+          <Card.Title>{u.name}</Card.Title>
+          {/* <Card.Img>{u.avatar}</Card.Img> */}
+          <Card.Body>{u.excerpt}</Card.Body>
+        </Card>
+      ))}
+    </Container>
+  )
+}
 
 export default About
