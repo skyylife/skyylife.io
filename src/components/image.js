@@ -17,8 +17,27 @@ import Background from "../components/background"
  */
 
 const imageStyles = css`
-  color: transparent;
-  scale: 0.5;
+  background-color: transparent;
+  width: 90%;
+  height: 90%;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(60px);
+`
+
+const parallax = css`
+  @include background;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform-style: preserve-3d;
 `
 
 const Image = () => {
@@ -36,14 +55,20 @@ const Image = () => {
 
   return (
     <Fragment>
-      <Background />
-      <Tilt>
-        <Img
-          css={imageStyles}
-          fluid={data.placeholderImage.childImageSharp.fluid}
-        />
-      </Tilt>
-      \
+      <div>
+        <Tilt
+          perspective={800}
+          glareEnable={true}
+          glareMaxOpacity={0.45}
+          scale={1}
+          css={parallax}
+        >
+          <Img
+            css={imageStyles}
+            fluid={data.placeholderImage.childImageSharp.fluid}
+          />
+        </Tilt>
+      </div>
     </Fragment>
   )
 }
