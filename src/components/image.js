@@ -2,8 +2,7 @@ import React, { Fragment } from "react"
 import { jsx, css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import Tilt from "react-parallax-tilt"
-import Background from "../components/background"
+import { Parallax } from "react-parallax"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -18,8 +17,8 @@ import Background from "../components/background"
 
 const imageStyles = css`
   background-color: transparent;
-  width: 90%;
-  height: 90%;
+  width: calc(100% - 120px);
+  height: calc(100% - 60px);
   z-index: 0;
   display: flex;
   flex-direction: column;
@@ -36,16 +35,18 @@ const parallax = css`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: transparent;
   transform-style: preserve-3d;
 `
+
+const bgImage = "../images/sl-logo.png"
 
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "sl-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 350) {
+          fluid(maxWidth: 400) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -55,20 +56,31 @@ const Image = () => {
 
   return (
     <Fragment>
-      <div>
-        <Tilt
-          perspective={800}
-          glareEnable={true}
-          glareMaxOpacity={0.45}
-          scale={1}
-          css={parallax}
-        >
-          <Img
-            css={imageStyles}
-            fluid={data.placeholderImage.childImageSharp.fluid}
-          />
-        </Tilt>
-      </div>
+      <Parallax
+        bgImage={bgImage}
+        strength={500}
+        renderLayer={percentage => (
+          <div>
+            <div
+              style={{
+                position: "absolute",
+                background: `rgba(66, 138, 176, ${percentage * 1})`,
+                left: "50%",
+                top: "50%",
+                borderRadius: "50%",
+                transform: "translate(-50%,-50%)",
+                width: percentage * 500,
+                height: percentage * 500,
+              }}
+            />
+          </div>
+        )}
+      >
+        <Img
+          css={imageStyles}
+          fluid={data.placeholderImage.childImageSharp.fluid}
+        />
+      </Parallax>
     </Fragment>
   )
 }
