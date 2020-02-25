@@ -27,18 +27,6 @@ const imageStyles = css`
   transform: translateZ(60px);
 `
 
-const parallax = css`
-  @include background;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  transform-style: preserve-3d;
-`
-
 const bgImage = "../images/sl-logo.png"
 
 const Image = () => {
