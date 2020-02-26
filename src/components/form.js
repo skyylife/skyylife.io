@@ -5,6 +5,7 @@ const wrapperStyles = css`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
   width: 100%;
   height: calc(100% - 120px);
   background-color: #333333;
@@ -17,6 +18,7 @@ const formStyles = css`
   display: flex;
   flex-direction: column;
   border: 2px solid red;
+
   color: white;
   padding: 1em;
 `
