@@ -1,12 +1,12 @@
-import React from 'react'
-import { Global, css } from '@emotion/core'
-import styled from '@emotion/styled'
+import React from "react"
+import { Global, css } from "@emotion/core"
+import styled from "@emotion/styled"
 
 const homeDivStyle = css`
   display: flex;
   flex-direction: column;
-  background: #3344FE;
-  color: #FFFFFF;
+  background: #31637f;
+  color: #ffffff;
   marginleft: 0;
   marginright: 0;
   marginbottom: 1rem;
