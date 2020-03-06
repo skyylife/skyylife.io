@@ -1,6 +1,5 @@
 import React from "react"
-import { Global, css } from "@emotion/core"
-import styled from "@emotion/styled"
+import { jsx, css } from "@emotion/core"
 
 const homeDivStyle = css`
   display: flex;
