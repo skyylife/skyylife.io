@@ -1,9 +1,6 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import { css } from "@emotion/core"
-import styled from "@emotion/styled"
 import React from "react"
-import Image from "../components/image"
 
 const navbarStyles = css`
   background: transparent;

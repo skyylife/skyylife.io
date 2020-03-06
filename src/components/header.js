@@ -1,10 +1,7 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import React from "react"
 import Image from "../components/image"
-import Background from "../components/background"
 
 const Header = styled("div")`
   background: transparent;
