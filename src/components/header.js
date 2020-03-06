@@ -7,8 +7,8 @@ import Image from "../components/image"
 import Background from "../components/background"
 
 const Header = styled("div")`
-  background: #333333;
-  color: #333333;
+  background: transparent;
+  color: transparent;
   marginbottom: 1rem;
   z-index: 999;
 `

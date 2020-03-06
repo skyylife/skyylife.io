@@ -20,6 +20,7 @@ const CardStyles = css`
   margin: 0;
   padding: 0.5em;
   width: auto;
+  background-color: transparent;
 
   &:nth-child(even) {
     flex-direction: row-reverse;

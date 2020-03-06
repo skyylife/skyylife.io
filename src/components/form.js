@@ -8,7 +8,7 @@ const wrapperStyles = css`
 
   width: 100%;
   height: calc(100% - 120px);
-  background-color: #333333;
+  background-color: transparent;
 `
 
 const formStyles = css`
