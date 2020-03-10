@@ -45,6 +45,12 @@ const projectData = [
     icon: "",
     link: "https://github.com/skyylife/skyylife.io",
   },
+  {
+    id: 2,
+    name: "Skyy Life Website",
+    icon: "",
+    link: "https://github.com/skyylife/skyylife.io",
+  },
 ]
 
 const Projects = () => {
