@@ -1,30 +1,15 @@
 import React from "react"
 import { Global, css } from "@emotion/core"
-import styled from "@emotion/styled"
-import Header from "../components/header"
-import ContactForm from "../components/form"
+import NavBar from "../components/navbar"
 
-import Home from "../components/sections/home"
-import About from "../components/sections/about"
-import Projects from "./sections/projects"
-import Contact from "./sections/contact"
-
-const Wrapper = styled("div")`
-  border: 2px solid grey;
-  padding: 1rem;
-  backgound: grey;
+const wrapperStyles = css`
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
 `
 
-export default ({ children }) => (
-  <Wrapper>
-    {/* <Global
-      styles={css`
-        div {
-          background: transparent;
-          color: transparent;
-        }
-      `}
-    /> */}
-    {children}
-  </Wrapper>
-)
+export const Layout = ({ children }) => {
+  return <div>{children}</div>
+}
+
+export default Layout
