@@ -1,19 +1,23 @@
 import React from "react"
 import { jsx, css } from "@emotion/core"
-import styled from "@emotion/styled"
 import { Card } from "react-bootstrap"
 
-const Container = styled.div`
-  margin: 0;
+const wrapperStyles = css`
   display: flex;
-  column-count: 1;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
+  overflow-y: auto;
 `
 
-const CardStyles = css`
+const aboutGridStyles = css`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  grid-auto-rows: minmax(200px, 300px);
+  grid-gap: 10px;
+  flex: 1 0 auto;
+  margin-top: 1rem;
+`
+
+const cardStyles = css`
   display: flex;
   border: 2px solid red;
   flex-direction: row;
@@ -71,19 +75,20 @@ const userData = [
 
 const About = () => {
   return (
-    <Container>
+    <div css={wrapperStyles}>
       <header css={headerStyles}>Mission Statement</header>
       <p>Our Mission is ...</p>
       <header css={headerStyles}>The High Council</header>
-
-      {userData.map(u => (
-        <Card key={u.id} css={CardStyles}>
-          <Card.Title>{u.name}</Card.Title>
-          {/* <Card.Img>{u.avatar}</Card.Img> */}
-          <Card.Body>{u.excerpt}</Card.Body>
-        </Card>
-      ))}
-    </Container>
+      <div css={aboutGridStyles}>
+        {userData.map(u => (
+          <Card key={u.id} css={CardStyles}>
+            <Card.Title>{u.name}</Card.Title>
+            {/* <Card.Img>{u.avatar}</Card.Img> */}
+            <Card.Body>{u.excerpt}</Card.Body>
+          </Card>
+        ))}
+      </div>
+    </div>
   )
 }
 
