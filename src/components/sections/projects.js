@@ -1,13 +1,8 @@
 import React from "react"
 import { jsx, css } from "@emotion/core"
 import { Card } from "react-bootstrap/"
-import WebIcon from "mdi-react/WebIcon"
-
-const wrapperStyles = css`
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-`
+import logo from "../../images/sl-logo-short.png"
+import { headerStyles } from "../../styles/shared-styles"
 
 const projectGridStyles = css`
   display: grid;
@@ -18,53 +13,78 @@ const projectGridStyles = css`
   margin-top: 1rem;
 `
 
-const cardStyles = css`
+const cardStyles = url => css`
   display: flex;
-  border: 2px solid red;
+  border: 2px solid lightgrey;
+  border-radius: 25px;
   flex-direction: row;
-  margin: 0;
-  padding: 0.5em;
+  margin: 0.5em;
+  padding: 1em;
   width: auto;
+  background-image: url(${url});
+  background-position: center center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
   background-color: transparent;
-`
 
-const headerStyles = css`
-  font-size: 200%;
+  .card-body {
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #131821;
+  }
+
+  .card-text {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .card-link {
+    color: white;
+    font-size: 20px;
+    position: relative;
+
+    text-align: center;
+  }
+
+  &:hover .card-body {
+    opacity: 1;
+  }
 `
 
 const projectData = [
   {
     id: 0,
     name: "Skyy Life Website",
-    icon: "",
     link: "https://github.com/skyylife/skyylife.io",
-  },
-  {
-    id: 1,
-    name: "Skyy Life Website",
-    icon: "",
-    link: "https://github.com/skyylife/skyylife.io",
-  },
-  {
-    id: 2,
-    name: "Skyy Life Website",
-    icon: "",
-    link: "https://github.com/skyylife/skyylife.io",
+    img: `${logo}`,
   },
 ]
 
-// This is a test comment
-
 const Projects = () => {
   return (
-    <div wrapperStyles>
-      <header css={headerStyles}>Current Projects</header>
+    <div>
+      <header css={headerStyles("flex-start")}>Current Projects</header>
       <div css={projectGridStyles}>
         {projectData.map(d => (
-          <Card key={d.id} css={cardStyles}>
-            <Card.Title>{d.name}</Card.Title>
-            <Card.Link href={d.link}>{d.link}</Card.Link>
-            <WebIcon />
+          <Card key={d.id} css={cardStyles(d.img)}>
+            <a href={d.link} target="_blank">
+              <Card.Body>
+                <Card.Text>{d.name}</Card.Text>
+              </Card.Body>
+            </a>
           </Card>
         ))}
       </div>

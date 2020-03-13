@@ -1,6 +1,7 @@
 import React from "react"
 import { jsx, css } from "@emotion/core"
 import { Card } from "react-bootstrap"
+import { headerStyles } from "../../styles/shared-styles"
 
 import jamesAv from '../../images/James.png'
 import dymonAv from '../../images/Dymon.png'
@@ -48,10 +49,6 @@ const cardStyles = url => css`
 
 `
 
-const headerStyles = css`
-  font-size: 200%;
-`
-
 const userData = [
   {
     id: 0,
@@ -90,9 +87,7 @@ const userData = [
 const About = () => {
   return (
     <div css={wrapperStyles}>
-      <header css={headerStyles}>Mission Statement</header>
-      <p>Our Mission is ...</p>
-      <header css={headerStyles}>The High Council</header>
+      <header css={headerStyles("flex-end")}>The High Council</header>
       <div css={aboutGridStyles}>
         {userData.map(u => (
           <Card key={u.id} css={cardStyles(u.avatar)}>

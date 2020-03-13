@@ -4,7 +4,7 @@ import { jsx, css } from "@emotion/core"
 const homeDivStyle = css`
   display: flex;
   flex-direction: column;
-  background: #31637f;
+  background: transparent;
   color: #ffffff;
   marginleft: 0;
   marginright: 0;
