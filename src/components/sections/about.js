@@ -23,17 +23,17 @@ const aboutGridStyles = css`
   flex: 1 0 auto;
   margin: 1rem;
   padding: 0.5em;
-  border: 2px solid green;
 `
 
 const cardStyles = url => css`
   display: flex;
-  border: 2px solid red;
+  border: none;
   flex-direction: row;
   margin: 0.5em;
-  padding: 0.5em;
+  padding: 1em;
   width: auto;
   background-image: url(${url});
+  background-position: center center;
   background-color: transparent;
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -44,7 +44,28 @@ const cardStyles = url => css`
   }
 
   .card-body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #131821;
     justify-content: flex-start;
+  }
+
+  .card-text {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  &:hover .card-body {
+    opacity: 1;
   }
 
 `
