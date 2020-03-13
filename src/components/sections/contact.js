@@ -1,25 +1,20 @@
 import React from "react"
-import { Global, css } from "@emotion/core"
-import styled from "@emotion/styled"
+import { jsx, css } from "@emotion/core"
+import { headerStyles } from "../../styles/shared-styles"
 import ContactForm from "../form"
 
-const Container = styled.div`
-  margin: 0;
+const wrapperStyles = css`
   display: flex;
-  column-count: 1;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
+  overflow-y: auto;
 `
 
 const Contact = () => {
   return (
-    <>
-      <Container>
-        <ContactForm />
-      </Container>
-    </>
+    <div css={wrapperStyles}>
+      <header css={headerStyles("flex-end")}>Contact Us</header>
+      <ContactForm />
+    </div>
   )
 }
 
