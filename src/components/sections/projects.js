@@ -2,6 +2,7 @@ import React from "react"
 import { jsx, css } from "@emotion/core"
 import { Card } from "react-bootstrap/"
 import logo from "../../images/sl-logo-short.png"
+import { headerStyles } from "../../styles/shared-styles"
 
 const projectGridStyles = css`
   display: grid;
@@ -63,22 +64,6 @@ const cardStyles = url => css`
   }
 `
 
-const headerStyles = css`
-  flex-direction: row;
-  background: #31637f;
-  color: #ffffff;
-  marginleft: 0;
-  marginright: 0;
-  marginbottom: 1rem;
-  align-items: center;
-  justify-content: center;
-  column-width: auto;
-  display: flex;
-  font-size: 200%;
-  justify-content: flex-end;
-  padding: 1em;
-`
-
 const projectData = [
   {
     id: 0,
@@ -90,8 +75,8 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <div wrapperStyles>
-      <header css={headerStyles}>Current Projects</header>
+    <div>
+      <header css={headerStyles("flex-start")}>Current Projects</header>
       <div css={projectGridStyles}>
         {projectData.map(d => (
           <Card key={d.id} css={cardStyles(d.img)}>
