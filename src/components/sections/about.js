@@ -81,7 +81,7 @@ const About = () => {
       <header css={headerStyles}>The High Council</header>
       <div css={aboutGridStyles}>
         {userData.map(u => (
-          <Card key={u.id} css={CardStyles}>
+          <Card key={u.id} css={cardStyles}>
             <Card.Title>{u.name}</Card.Title>
             {/* <Card.Img>{u.avatar}</Card.Img> */}
             <Card.Body>{u.excerpt}</Card.Body>
