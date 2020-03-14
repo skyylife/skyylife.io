@@ -14,4 +14,5 @@ export const headerStyles = flexDirection => css`
   font-size: 200%;
   justify-content: ${flexDirection};
   padding: 1em;
+  opacity: 0.8;
 `
