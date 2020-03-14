@@ -22,7 +22,6 @@ const h1Style = css`
 const Home = () => {
   return (
     <div css={homeDivStyle}>
-      <h1 css={h1Style}>To Live and Embrace</h1>
       <p>
         SkyyLife is a culmination of minds focused on improving life with
         technology whether it be software or hardware.
