@@ -23,8 +23,9 @@ const aboutGridStyles = css`
   flex: 1 0 auto;
   margin: 1rem;
   padding: 0.5em;
+  justify-content: space-evenly;
 `
-
+//Need to add logic for only translating Y above certain resolution/size
 const cardStyles = url => css`
   display: flex;
   border: none;
@@ -43,6 +44,7 @@ const cardStyles = url => css`
 
   }
 
+
   .card-body {
     position: absolute;
     top: 0;
@@ -52,7 +54,7 @@ const cardStyles = url => css`
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: 0.5s ease;
+    transition: transform 2s, opacity 500ms, height 1s, background-color 1s;
     background-color: #131821;
     justify-content: flex-start;
   }
@@ -64,9 +66,25 @@ const cardStyles = url => css`
     text-align: center;
   }
 
-  &:hover .card-body {
-    opacity: 1;
+  &:nth-child(4):hover {
+    transition: transform 0.7s;
+    transform: translateY(-10em);
   }
+
+  &:nth-child(5):hover {
+    transition: transform 0.7s;
+    transform: translateY(-10em);
+  }
+
+  &:hover .card-body {
+    opacity: 0.95;
+    background-color: #31637f;
+    height: 150%;
+    z-index: 4;
+
+  }
+
+  
 
 `
 
