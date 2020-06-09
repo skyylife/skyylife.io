@@ -15,19 +15,30 @@ import { Parallax } from "react-parallax"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const imageStyles = css`
-  background-color: transparent;
-  width: calc(100% - 120px);
-  height: calc(100% - 60px);
-  z-index: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: translateZ(60px);
+const uiContainerStyles = css`
+  display: grid;
+  grid-template-rows: 50px calc(100% - 50px);
+  grid-template-columns: 50px 100px 300px;
+  grid-template-areas: "header header header";
+  grid-gap: 3px;
 `
 
-const bgImage = "../images/sl-logo.png"
+const imageStyles = css`
+  position: absolute;
+  background-color: transparent;
+  width: 40%;
+  height: 40%;
+  z-index: 50;
+`
+
+const backgroundStyles = css`
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 0.2;
+`
 
 const Image = () => {
   const data = useStaticQuery(graphql`
@@ -39,37 +50,27 @@ const Image = () => {
           }
         }
       }
+      spaceImage: file(relativePath: { eq: "milky-way.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   return (
-    <Fragment>
-      <Parallax
-        bgImage={bgImage}
-        strength={500}
-        renderLayer={percentage => (
-          <div>
-            <div
-              style={{
-                position: "absolute",
-                background: `rgba(66, 138, 176, ${percentage * 1})`,
-                left: "50%",
-                top: "50%",
-                borderRadius: "50%",
-                transform: "translate(-50%,-50%)",
-                width: percentage * 500,
-                height: percentage * 500,
-              }}
-            />
-          </div>
-        )}
-      >
-        <Img
-          css={imageStyles}
-          fluid={data.placeholderImage.childImageSharp.fluid}
-        />
-      </Parallax>
-    </Fragment>
+    <div css={uiContainerStyles}>
+      <Img
+        css={backgroundStyles}
+        fluid={data.spaceImage.childImageSharp.fluid}
+      />
+      <Img
+        css={imageStyles}
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    </div>
   )
 }
 
