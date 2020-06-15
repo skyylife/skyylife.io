@@ -1,8 +1,6 @@
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import React from "react"
-import Image from "../components/image"
-import Space from "../components/Space"
 
 const Header = styled("div")`
   background: transparent;
@@ -13,10 +11,7 @@ const Header = styled("div")`
 
 export default ({ siteTitle }) => (
   <div>
-    <Header>
-      {/* <Space /> */}
-      <Image />
-    </Header>
+    <Header></Header>
   </div>
 )
 

@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,13 +7,15 @@ import Contact from "../components/sections/contact"
 import About from "../components/sections/about"
 import Home from "../components/sections/home"
 import Projects from "../components/sections/projects"
+import Masthead from "../components/masthead"
 
 import "bootstrap/dist/css/bootstrap.min.css"
 
-const IndexPage = () => (
+const IndexPage = props => (
   <Layout>
     <SEO title="Home" />
     <Header siteTitle={"SkyyLife"} />
+    <Masthead />
     <Home />
     <About />
     <Projects />
