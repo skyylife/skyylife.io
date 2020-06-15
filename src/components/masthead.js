@@ -16,7 +16,7 @@ const mastheadStyles = css`
 const Masthead = () => {
   const data = useStaticQuery(graphql`
     query {
-      spaceImage: file(relativePath: { eq: "milky-way.jpg" }) {
+      spaceImage: file(relativePath: { eq: "space-stars.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1920) {
             ...GatsbyImageSharpFluid

@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 const wrapperStyles = css`
   display: -webkit-flex; /* Safari */
   display: flex;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   align-items: center;
   justify-content: center;
