@@ -1,5 +1,6 @@
-import React from "react"
+/** @jsx jsx */
 import { jsx, css } from "@emotion/core"
+import React from "react"
 import { Card } from "react-bootstrap/"
 import logo from "../../images/sl-logo-short.png"
 import { headerStyles } from "../../styles/shared-styles"

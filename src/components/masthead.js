@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core"
 import React from "react"
-import { css } from "@emotion/core"
 import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "../components/image"

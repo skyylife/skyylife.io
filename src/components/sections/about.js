@@ -3,11 +3,11 @@ import { jsx, css } from "@emotion/core"
 import { Card } from "react-bootstrap"
 import { headerStyles } from "../../styles/shared-styles"
 
-import jamesAv from '../../images/James.png'
-import dymonAv from '../../images/Dymon.png'
-import aaronAv from '../../images/Aaron.png'
-import sharroneAv from '../../images/Sharrone.png'
-import quinceyAv from '../../images/Quincey.png'
+import jamesAv from "../../images/James.png"
+import dymonAv from "../../images/Dymon.png"
+import aaronAv from "../../images/Aaron.png"
+import sharroneAv from "../../images/Sharrone.png"
+import quinceyAv from "../../images/Quincey.png"
 
 const wrapperStyles = css`
   display: flex;
@@ -38,9 +38,8 @@ const cardStyles = url => css`
   background-size: auto 100%;
   background-repeat: no-repeat;
 
-  &:nth-child(even) {
+  &:nth-of-type(even) {
     flex-direction: row-reverse;
-
   }
 
   .card-body {
@@ -67,14 +66,13 @@ const cardStyles = url => css`
   &:hover .card-body {
     opacity: 1;
   }
-
 `
 
 const userData = [
   {
     id: 0,
     name: "James Jarrett",
-    avatar:`${jamesAv}`,
+    avatar: `${jamesAv}`,
     excerpt: "This is James, the CEO",
   },
   {
@@ -113,8 +111,8 @@ const About = () => {
         {userData.map(u => (
           <Card key={u.id} css={cardStyles(u.avatar)}>
             <Card.Body>
-            <Card.Title>{u.name}</Card.Title>
-            <Card.Text>{u.excerpt}</Card.Text>
+              <Card.Title>{u.name}</Card.Title>
+              <Card.Text>{u.excerpt}</Card.Text>
             </Card.Body>
           </Card>
         ))}

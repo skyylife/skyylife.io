@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core"
 import React from "react"
-import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 

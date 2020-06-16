@@ -1,24 +1,38 @@
-import PropTypes from "prop-types"
-import styled from "@emotion/styled"
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core"
 import React from "react"
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
 
-const Header = styled("div")`
-  background: transparent;
-  color: transparent;
-  marginbottom: 1rem;
-  z-index: 999;
+const wrapperStyle = css`
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
 `
 
-export default ({ siteTitle }) => (
-  <div>
-    <Header></Header>
-  </div>
-)
+const navBarStyles = css`
+  width: 60vw;
+  height: 8vh;
+  display: flex;
+  justify-content: flex-end;
+`
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+const Header = () => {
+  return (
+    <div css={wrapperStyle}>
+      <Navbar sticky="top" variant="light" css={navBarStyles}>
+        <Navbar.Brand href="#home">
+          <img src="/sl-logo-short.png" width={30} height={30} alt="sl-logo" />
+        </Navbar.Brand>
+        <Nav justify variant="tabs">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#about">About</Nav.Link>
+          <Nav.Link href="#projects">Projects</Nav.Link>
+          <Nav.Link href="#contact">Contact</Nav.Link>
+        </Nav>
+      </Navbar>
+    </div>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+export default Header
