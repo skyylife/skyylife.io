@@ -17,7 +17,8 @@ const formStyles = css`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
+  border: 1px solid grey;
+  border-radius: 25px;
 
   color: white;
   padding: 1em;

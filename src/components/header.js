@@ -25,10 +25,10 @@ const Header = () => {
           <img src="/sl-logo-short.png" width={30} height={30} alt="sl-logo" />
         </Navbar.Brand>
         <Nav justify variant="tabs">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#about">About</Nav.Link>
-          <Nav.Link href="#projects">Projects</Nav.Link>
-          <Nav.Link href="#contact">Contact</Nav.Link>
+          <Nav.Link>Home</Nav.Link>
+          <Nav.Link>About</Nav.Link>
+          <Nav.Link>Projects</Nav.Link>
+          <Nav.Link>Contact</Nav.Link>
         </Nav>
       </Navbar>
     </div>

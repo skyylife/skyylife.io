@@ -15,11 +15,11 @@ const IndexPage = props => (
   <Layout>
     <SEO title="Home" />
     <Masthead />
-    <Home />
+    <Home id="home" />
     <Header />
-    <About />
-    <Projects />
-    <Contact />
+    <About id="about" />
+    <Projects id="projects" />
+    <Contact id="contact" />
   </Layout>
 )
 
