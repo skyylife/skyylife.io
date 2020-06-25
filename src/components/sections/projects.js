@@ -16,7 +16,7 @@ const projectGridStyles = css`
 
 const cardStyles = url => css`
   display: flex;
-  border: 2px solid lightgrey;
+  border: 1px solid grey;
   border-radius: 25px;
   flex-direction: row;
   margin: 0.5em;
