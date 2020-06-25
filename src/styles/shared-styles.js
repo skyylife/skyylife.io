@@ -2,7 +2,7 @@ import { css } from "@emotion/core"
 
 export const headerStyles = flexDirection => css`
   flex-direction: row;
-  background: #31637f;
+  background: rgba(49, 99, 127, 0.3);
   color: #ffffff;
   marginleft: 0;
   marginright: 0;
