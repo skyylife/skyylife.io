@@ -1,7 +1,9 @@
+/** @jsx jsx */
 import React from "react"
 import { jsx, css } from "@emotion/core"
 import { Card } from "react-bootstrap"
 import { headerStyles } from "../../styles/shared-styles"
+import ReactTooltip from "react-tooltip"
 
 import jamesAv from "../../images/James.png"
 import dymonAv from "../../images/Dymon.png"
@@ -63,8 +65,16 @@ const cardStyles = url => css`
     text-align: center;
   }
 
+  .card-title {
+    color: white;
+    font-size: 40px;
+    position: relative;
+    text-align: center;
+  }
+
   &:hover .card-body {
-    opacity: 1;
+    opacity: 0.5;
+    cursor: pointer;
   }
 `
 
@@ -106,13 +116,13 @@ const userData = [
 const About = () => {
   return (
     <div css={wrapperStyles}>
+      <ReactTooltip place="top" type="dark" effect="float" event="click" />
       <header css={headerStyles("flex-end")}>The High Council</header>
       <div css={aboutGridStyles}>
         {userData.map(u => (
           <Card key={u.id} css={cardStyles(u.avatar)}>
-            <Card.Body>
+            <Card.Body data-tip={u.excerpt}>
               <Card.Title>{u.name}</Card.Title>
-              <Card.Text>{u.excerpt}</Card.Text>
             </Card.Body>
           </Card>
         ))}
