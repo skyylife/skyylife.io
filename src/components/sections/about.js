@@ -25,7 +25,7 @@ const aboutGridStyles = css`
   padding: 0.5em;
   justify-content: space-evenly;
 `
-//Need to add logic for only translating Y above certain resolution/size
+// Need to add logic for only translating Y above certain resolution/size
 const cardStyles = url => css`
   display: flex;
   border: none;
