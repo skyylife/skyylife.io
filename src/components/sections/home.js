@@ -5,39 +5,35 @@ import { jsx, css } from "@emotion/core"
 const homeDivStyle = css`
   display: flex;
   flex-direction: column;
-  background: transparent
-  marginleft: 0;
-  marginright: 0;
-  marginbottom: 1rem;
-  justify-content: flex-start;
-  width: 40vw;
+  background-color: transparent;
+  margin: 2rem 0 1rem 0;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
 `
 
 const h1Style = css`
-  flex: 1;
-  font-size: 380%;
-`
-
-const copyrightStyle = css`
-  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
   font-size: 200%;
 `
 
-const navBarStyles = css`
-  position: relative;
+const copyrightStyle = css`
   display: flex;
-  flex-direction: row;
-  justify-content: start;
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 200%;
 `
 
 const Home = () => {
   return (
     <div css={homeDivStyle}>
-      <h3 css={h1Style}>To Live and Embrace...</h3>
+      <h3 css={h1Style}>To Live and Embrace:</h3>
       <p css={copyrightStyle}>
-        Skyylife is freedom through technology. We are a culmination of minds
+        Skyylife is freedom through inovation. We are a culmination of minds
         with different backgrounds throught the tech, design, security and other
-        sectors. Our goal is to create and design innovative products that help
+        spaces. Our goal is to create, design, and innovative products that help
         people enhance their lives and live freely.
       </p>
     </div>
