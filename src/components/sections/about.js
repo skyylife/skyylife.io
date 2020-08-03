@@ -20,9 +20,9 @@ const aboutGridStyles = css`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(800px, 1000px));
   grid-auto-rows: minmax(200px, 300px);
-  // grid-gap: 30px;
   left: 0;
-  flex: 1 0 auto;
+  grid-gap: 30px;
+  lflex: 1 0 auto;
   margin: 1rem;
   padding: 0.5em;
 `
@@ -40,9 +40,6 @@ const cardStyles = url => css`
   background-repeat: no-repeat;
   float: left;
   flex-direction: row-reverse;
-  // &:nth-of-type(odd) {
-  //   flex-direction: row-reverse;
-  // }
 
   .card-body {
     position: absolute;
@@ -91,7 +88,8 @@ const userData = [
     id: 0,
     name: "James Jarrett",
     avatar: `${jamesAv}`,
-    excerpt: "This is James, the CEO",
+    excerpt:
+      "This is James, Oklahoma State Electrical Engineering Technology graduate, currently working as a software engineer for a startup. James has a passion for making technologies aceesible for all while pushing for edge and emergent technologies to find out more about james checkout his github(link) and linkedin(link) ",
   },
   {
     id: 1,
