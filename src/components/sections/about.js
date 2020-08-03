@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx, css } from "@emotion/core"
-import { Card } from "react-bootstrap"
+import { Card, Container } from "react-bootstrap"
 import { headerStyles } from "../../styles/shared-styles"
-import ReactTooltip from "react-tooltip"
-
+import { Jumbotron } from "react-bootstrap"
 import jamesAv from "../../images/James.png"
 import dymonAv from "../../images/Dymon.png"
 import aaronAv from "../../images/Aaron.png"
@@ -19,9 +18,10 @@ const wrapperStyles = css`
 
 const aboutGridStyles = css`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  grid-template-columns: repeat(auto-fit, minmax(800px, 1000px));
   grid-auto-rows: minmax(200px, 300px);
-  grid-gap: 30px;
+  // grid-gap: 30px;
+  left: 0;
   flex: 1 0 auto;
   margin: 1rem;
   padding: 0.5em;
@@ -30,7 +30,6 @@ const aboutGridStyles = css`
 const cardStyles = url => css`
   display: flex;
   border: none;
-  flex-direction: row;
   margin: 0.5em;
   padding: 1em;
   width: auto;
@@ -39,10 +38,11 @@ const cardStyles = url => css`
   background-color: transparent;
   background-size: auto 100%;
   background-repeat: no-repeat;
-
-  &:nth-of-type(even) {
-    flex-direction: row-reverse;
-  }
+  float: left;
+  flex-direction: row-reverse;
+  // &:nth-of-type(odd) {
+  //   flex-direction: row-reverse;
+  // }
 
   .card-body {
     position: absolute;
@@ -51,7 +51,7 @@ const cardStyles = url => css`
     left: 0;
     right: 0;
     height: 100%;
-    width: 100%;
+    width: auto;
     opacity: 0;
     transition: 0.5s ease;
     background-color: #131821;
@@ -76,6 +76,14 @@ const cardStyles = url => css`
     opacity: 0.5;
     cursor: pointer;
   }
+`
+
+const jumbotronStyles = css`
+  margin-left: 400px;
+  width: 250px;
+  height: 250px;
+  background-color: transparent;
+  opacity: 1;
 `
 
 const userData = [
@@ -116,14 +124,18 @@ const userData = [
 const About = () => {
   return (
     <div css={wrapperStyles}>
-      {/* <ReactTooltip place="top" type="dark" effect="float" event="click" /> */}
       <header css={headerStyles("flex-start")}>The High Council</header>
       <div css={aboutGridStyles}>
         {userData.map(u => (
           <Card key={u.id} css={cardStyles(u.avatar)}>
-            <Card.Body data-tip={u.excerpt}>
+            <Card.Body>
               <Card.Title>{u.name}</Card.Title>
             </Card.Body>
+            <Jumbotron fluid css={jumbotronStyles}>
+              <Container>
+                <p>{u.excerpt}</p>
+              </Container>
+            </Jumbotron>
           </Card>
         ))}
       </div>

@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import { jsx, css } from "@emotion/core"
 import React, { useState } from "react"
 
@@ -58,11 +59,17 @@ const ContactForm = ({ props }) => {
         method="POST"
         css={formStyles}
       >
-        <label>Email:</label>
+        <label htmlFor="email" id="email">
+          Email:
+        </label>
         <input type="email" name="email" />
-        <label>Message:</label>
+        <label htmlFor="message" id="message">
+          Message:
+        </label>
         <textarea name="message" css={textareaStyles}></textarea>
-        <label>Number</label>
+        <label htmlFor="number" id="number">
+          Number
+        </label>
         <input type="text" name="number" style={{ marginBottom: "1em" }} />
         {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
         {status === "ERROR" && <p>Ooops! There was an error.</p>}
