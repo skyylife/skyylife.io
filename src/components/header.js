@@ -20,7 +20,7 @@ const navBarStyles = css`
 const Header = () => {
   return (
     <div css={wrapperStyle}>
-      <Navbar sticky="top" variant="light" css={navBarStyles}>
+      <Navbar sticky="top" variant="dark" css={navBarStyles}>
         <Navbar.Brand href="#home">
           <img src="/sl-logo-short.png" width={30} height={30} alt="sl-logo" />
         </Navbar.Brand>

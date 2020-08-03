@@ -116,8 +116,8 @@ const userData = [
 const About = () => {
   return (
     <div css={wrapperStyles}>
-      <ReactTooltip place="top" type="dark" effect="float" event="click" />
-      <header css={headerStyles("flex-end")}>The High Council</header>
+      {/* <ReactTooltip place="top" type="dark" effect="float" event="click" /> */}
+      <header css={headerStyles("flex-start")}>The High Council</header>
       <div css={aboutGridStyles}>
         {userData.map(u => (
           <Card key={u.id} css={cardStyles(u.avatar)}>

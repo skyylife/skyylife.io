@@ -12,7 +12,7 @@ const wrapperStyles = css`
 const Contact = () => {
   return (
     <div css={wrapperStyles}>
-      <header css={headerStyles("flex-end")}>Contact Us</header>
+      <header css={headerStyles("flex-start")}>Contact Us</header>
       <ContactForm />
     </div>
   )
