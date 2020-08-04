@@ -12182,16 +12182,6 @@ react-overlays@^3.1.2:
     uncontrollable "^7.0.0"
     warning "^4.0.3"
 
-react-parallax-tilt@^1.3.40:
-  version "1.4.53"
-  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.4.53.tgz#00c82f7459c7be31ddce28aca8e1adbdc8951836"
-  integrity sha512-8wgM1PQIsrmhtduCAGFIRmthwAE/kpqYt8ymoLsD1uxPtsfbhYt3W2mjZCdBYgelkd21MG/CggcMQq1wzwwQRw==
-
-react-parallax@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-3.0.3.tgz#5550f1e81bf040b240045348cb3b039b73a735ef"
-  integrity sha512-kdoMjg5B9nQFh3mTFrnzkr7AoG89L/tq1c98ho3g+11UwfeYePji9D3oeqN/oDtJemWKypnB8OYrzQ/BTazrNA==
-
 react-reconciler@^0.24.0:
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.24.0.tgz#5a396b2c2f5efe8554134a5935f49f546723f2dd"

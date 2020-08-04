@@ -1,14 +1,12 @@
-import React, { Component } from 'react'
-import { Element } from 'react-scroll'
+import React, { Component } from "react"
+import { Element } from "react-scroll"
 
-export default function () {
+export default function() {
   return (
     <React.Fragment>
-
-      <Element id='home' name='home'>
+      <Element id="home" name="home">
         // wrap your content in the Element from react-scroll
       </Element>
-
     </React.Fragment>
   )
 }
