@@ -4,8 +4,6 @@ import React from "react"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import Scroll, { Link, scroll } from "react-scroll"
-import Home from "./sections/home"
-import { Switch, Route } from "react-router-dom"
 import Logo from "../images/sl-logo-short.png"
 
 const ScrollLink = Scroll.ScrollLink
