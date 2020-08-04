@@ -3,35 +3,47 @@ import { jsx, css } from "@emotion/core"
 import React from "react"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
-import Scroll, { Link, scroll } from "react-scroll"
+import * as Scroll from "react-scroll"
+import { Link, animateScroll as scroll } from "react-scroll"
 import Logo from "../images/sl-logo-short.png"
 
-const ScrollLink = Scroll.ScrollLink
 
-const wrapperStyle = css`
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-`
+// const wrapperStyle = css`
+//   position: relative;
+//   display: flex;
+//   justify-content: flex-end;
+// `
 
 const navBarStyles = css`
+  color: white;
   width: 60vw;
   height: 8vh;
   display: flex;
   justify-content: flex-end;
-  position: fixed;
+  position: sticky;
+  -webkit-position: sticky;
   top: 0;
   width: 100%;
 `
 
+const scrollToTop = function() {
+  scroll.scrollToTop()
+}
+
 const Header = () => {
   return (
-    <div css={wrapperStyle}>
+    // <div css={wrapperStyle}>
       <Navbar sticky="top" variant="dark" css={navBarStyles}>
-        <Navbar.Brand href="#home">
-          <img src={Logo} width={30} height={30} alt="sl-logo" />
+        <Navbar.Brand>
+          <img 
+            src={Logo} 
+            width={30} 
+            height={30} 
+            alt="sl-logo"
+            onClick={scrollToTop}
+           />
         </Navbar.Brand>
-        <nav justify variant="tabs" className="nav sticky-top" id="navbar">
+        <Nav justify variant="tabs" className="nav" id="navbar">
           <Nav.Link>
             <Link
               activeClass="active"
@@ -76,9 +88,9 @@ const Header = () => {
               Contact
             </Link>
           </Nav.Link>
-        </nav>
+        </Nav>
       </Navbar>
-    </div>
+    // </div>
   )
 }
 
