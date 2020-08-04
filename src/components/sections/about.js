@@ -4,6 +4,7 @@ import { jsx, css } from "@emotion/core"
 import { Card, Container } from "react-bootstrap"
 import { headerStyles } from "../../styles/shared-styles"
 import { Jumbotron } from "react-bootstrap"
+import { Element } from "react-scroll"
 import jamesAv from "../../images/James.png"
 import dymonAv from "../../images/Dymon.png"
 import aaronAv from "../../images/Aaron.png"
@@ -121,6 +122,7 @@ const userData = [
 
 const About = () => {
   return (
+    <Element id="about" name="about" className="element">
     <div css={wrapperStyles}>
       <header css={headerStyles("flex-start")}>The High Council</header>
       <div css={aboutGridStyles}>
@@ -138,6 +140,7 @@ const About = () => {
         ))}
       </div>
     </div>
+    </Element>
   )
 }
 

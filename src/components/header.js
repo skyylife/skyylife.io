@@ -3,6 +3,13 @@ import { jsx, css } from "@emotion/core"
 import React from "react"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
+import Scroll, { Link, scroll } from 'react-scroll'
+import Home from './sections/home'
+import { Switch, Route } from 'react-router-dom';
+import Logo from "../images/sl-logo-short.png"
+
+const ScrollLink = Scroll.ScrollLink
+
 
 const wrapperStyle = css`
   position: relative;
@@ -15,6 +22,9 @@ const navBarStyles = css`
   height: 8vh;
   display: flex;
   justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  width: 100%;
 `
 
 const Header = () => {
@@ -22,16 +32,52 @@ const Header = () => {
     <div css={wrapperStyle}>
       <Navbar sticky="top" variant="dark" css={navBarStyles}>
         <Navbar.Brand href="#home">
-          <img src="/sl-logo-short.png" width={30} height={30} alt="sl-logo" />
+          <img src={Logo} width={30} height={30} alt="sl-logo" />
         </Navbar.Brand>
-        <Nav justify variant="tabs">
-          <Nav.Link>Home</Nav.Link>
-          <Nav.Link>About</Nav.Link>
-          <Nav.Link>Projects</Nav.Link>
-          <Nav.Link>Contact</Nav.Link>
-        </Nav>
-      </Navbar>
-    </div>
+        <nav justify variant="tabs" className="nav sticky-top" id="navbar">
+          <Nav.Link>
+          <Link
+            activeClass="active"
+            to="home"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >Home</Link>
+          </Nav.Link>
+          <Nav.Link>
+          <Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >About</Link>
+          </Nav.Link>
+          <Nav.Link>
+          <Link
+            activeClass="active"
+            to="projects"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >Projects</Link>
+          </Nav.Link>
+          <Nav.Link>
+          <Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >Contact</Link>
+          </Nav.Link>
+          {/* <Nav.Link as={Link} to="/">Home</Nav.Link>
+          <Nav.Link as={Link} to="/about">About</Nav.Link>
+          <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
+          <Nav.Link as={Link} to="/contact">Contact</Nav.Link> */}
+        </nav>
+       </Navbar>
+     </div>
   )
 }
 
