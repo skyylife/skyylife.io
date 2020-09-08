@@ -7,13 +7,6 @@ import * as Scroll from "react-scroll"
 import { Link, animateScroll as scroll } from "react-scroll"
 import Logo from "../images/sl-logo-short.png"
 
-
-// const wrapperStyle = css`
-//   position: relative;
-//   display: flex;
-//   justify-content: flex-end;
-// `
-
 const navBarStyles = css`
   color: white;
   width: 60vw;
@@ -32,7 +25,6 @@ const scrollToTop = function() {
 
 const Header = () => {
   return (
-    // <div css={wrapperStyle}>
       <Navbar sticky="top" variant="dark" css={navBarStyles}>
         <Navbar.Brand>
           <img 
@@ -90,7 +82,6 @@ const Header = () => {
           </Nav.Link>
         </Nav>
       </Navbar>
-    // </div>
   )
 }
 
