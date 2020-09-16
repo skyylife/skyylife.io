@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx, css } from "@emotion/core"
+import { Element } from "react-scroll"
 
 const homeDivStyle = css`
   display: flex;
@@ -28,6 +29,7 @@ const copyrightStyle = css`
 
 const Home = () => {
   return (
+    <Element id="home" name="home" className="element">
     <div css={homeDivStyle}>
       <h3 css={h1Style}>To Live and Embrace:</h3>
       <p css={copyrightStyle}>
@@ -37,6 +39,7 @@ const Home = () => {
         people enhance their lives and live freely.
       </p>
     </div>
+    </Element>
   )
 }
 

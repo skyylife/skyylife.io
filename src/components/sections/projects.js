@@ -2,6 +2,7 @@
 import { jsx, css } from "@emotion/core"
 import React from "react"
 import { Card } from "react-bootstrap/"
+import { Element } from "react-scroll"
 import logo from "../../images/sl-logo-short.png"
 import { headerStyles } from "../../styles/shared-styles"
 
@@ -76,7 +77,8 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <div>
+    <Element id="projects" name="projects" className="element">
+    <div name="projects">
       <header css={headerStyles("flex-start")}>Current Projects</header>
       <div css={projectGridStyles}>
         {projectData.map(d => (
@@ -90,6 +92,7 @@ const Projects = () => {
         ))}
       </div>
     </div>
+    </Element>
   )
 }
 
