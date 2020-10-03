@@ -16,7 +16,7 @@ const wrapperStyles = css`
 const imageStyles = css`
   position: relative;
   background-color: transparent;
-  width: 40%;
+  width: 45%;
   height: 40%;
   z-index: 50;
   background-position: center;
@@ -28,7 +28,7 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "sl-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
+          fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
         }

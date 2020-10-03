@@ -17,7 +17,7 @@ const mastheadStyles = css`
 const Masthead = () => {
   const data = useStaticQuery(graphql`
     query {
-      spaceImage: file(relativePath: { eq: "space-stars.jpg" }) {
+      spaceImage: file(relativePath: { eq: "shooting-stars.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1920) {
             ...GatsbyImageSharpFluid
@@ -33,6 +33,7 @@ const Masthead = () => {
         fluid={data.spaceImage.childImageSharp.fluid}
         fadeIn
         css={mastheadStyles}
+        href="https://www.freepik.com/photos/background'>Background photo created by kjpargeter - www.freepik.com"
       >
         <Image />
       </BackgroundImage>
